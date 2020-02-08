@@ -2497,3 +2497,13 @@ Processing by ManufacturersController#show as */*
 Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1758)
 
 
+Started GET "/manufacturers/2" for ::1 at 2020-02-07 20:14:28 -0500
+Processing by ManufacturersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mManufacturer Load (1.1ms)[0m  [1m[34mSELECT "manufacturers".* FROM "manufacturers" WHERE "manufacturers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/manufacturers_controller.rb:46:in `set_manufacturer'
+  [1m[36mModel Load (0.5ms)[0m  [1m[34mSELECT "models".* FROM "models" WHERE "models"."manufacturer_id" = $1[0m  [["manufacturer_id", 2]]
+  ↳ app/controllers/manufacturers_controller.rb:15:in `show'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 1879)
+
+
